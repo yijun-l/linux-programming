@@ -1,3 +1,7 @@
+# executable files
+*/build/
+.idea/
+
 # Prerequisites
 *.d
 
