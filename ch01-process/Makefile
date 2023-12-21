@@ -4,9 +4,9 @@ BUILD := build
 CFLAGS := -g
 
 fork:
+	mkdir -p ${BUILD}
 	${CC} ${CFLAGS} ${SRC}/$@.c -o ${BUILD}/$@
-	@echo "==================== Program Started ===================="
 	${BUILD}/$@
 
 clean:
-	rm -f build/*
+	rm -rf ${BUILD}
