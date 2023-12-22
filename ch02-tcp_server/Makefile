@@ -8,5 +8,10 @@ simple_server:
 	${CC} ${CFLAGS} ${SRC}/$@.c -o ${BUILD}/$@
 	${BUILD}/$@
 
+multiprocess_server:
+	mkdir -p ${BUILD}
+	${CC} ${CFLAGS} ${SRC}/$@.c -o ${BUILD}/$@
+	${BUILD}/$@
+
 clean:
 	rm -rf ${BUILD}
