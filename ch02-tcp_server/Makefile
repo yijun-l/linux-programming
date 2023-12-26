@@ -1,7 +1,7 @@
 SRC := src
 CC := gcc
 BUILD := build
-CFLAGS := -g
+CFLAGS := -g -pthread
 
 simple_server:
 	mkdir -p ${BUILD}
@@ -9,6 +9,16 @@ simple_server:
 	${BUILD}/$@
 
 multiprocess_server:
+	mkdir -p ${BUILD}
+	${CC} ${CFLAGS} ${SRC}/$@.c -o ${BUILD}/$@
+	${BUILD}/$@
+
+multithread_server:
+	mkdir -p ${BUILD}
+	${CC} ${CFLAGS} ${SRC}/$@.c -o ${BUILD}/$@
+	${BUILD}/$@
+
+select_server:
 	mkdir -p ${BUILD}
 	${CC} ${CFLAGS} ${SRC}/$@.c -o ${BUILD}/$@
 	${BUILD}/$@
