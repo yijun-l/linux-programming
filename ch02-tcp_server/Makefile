@@ -23,5 +23,11 @@ select_server:
 	${CC} ${CFLAGS} ${SRC}/$@.c -o ${BUILD}/$@
 	${BUILD}/$@
 
+# listen on tcp/8892
+epoll_server:
+	mkdir -p ${BUILD}
+	${CC} ${CFLAGS} ${SRC}/tcp_server.c ${SRC}/srv_utilities.c -o ${BUILD}/$@
+	${BUILD}/$@
+
 clean:
 	rm -rf ${BUILD}
