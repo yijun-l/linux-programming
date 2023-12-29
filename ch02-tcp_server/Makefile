@@ -29,5 +29,10 @@ epoll_server:
 	${CC} ${CFLAGS} ${SRC}/tcp_server.c ${SRC}/srv_utilities.c -o ${BUILD}/$@
 	${BUILD}/$@
 
+bst:
+	mkdir -p ${BUILD}
+	${CC} ${CFLAGS} ${SRC}/$@.c ${SRC}/btree.c -o ${BUILD}/$@
+	${BUILD}/$@
+
 clean:
 	rm -rf ${BUILD}
